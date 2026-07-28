@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViajesApp - Agencia de Viajes</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>ViajesApp</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#destinos">Destinos</a></li>
+                <li><a href="#paquetes">Paquetes</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h2>Encuentra tu proxima aventura</h2>
+                <p>Busca y reserva vuelos y paquetes turisticos con las mejores ofertas</p>
+            </div>
+        </section>
+
+        <section id="buscador">
+            <div class="search-container">
+                <h3>Busca tu viaje</h3>
+                <form id="search-form">
+                    <div class="form-group">
+                        <label for="origen">Origen:</label>
+                        <input type="text" id="origen" placeholder="Ciudad de origen" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="destino">Destino:</label>
+                        <input type="text" id="destino" placeholder="Ciudad de destino" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fecha-ida">Fecha de ida:</label>
+                        <input type="date" id="fecha-ida" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fecha-vuelta">Fecha de vuelta:</label>
+                        <input type="date" id="fecha-vuelta">
+                    </div>
+                    <div class="form-group">
+                        <label for="pasajeros">Pasajeros:</label>
+                        <select id="pasajeros">
+                            <option value="1">1 pasajero</option>
+                            <option value="2">2 pasajeros</option>
+                            <option value="3">3 pasajeros</option>
+                            <option value="4">4 pasajeros</option>
+                            <option value="5">5+ pasajeros</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-buscar">Buscar Vuelos</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="destinos-populares">
+            <h3>Destinos Populares</h3>
+            <div class="destinos-grid">
+                <div class="destino-card">
+                    <div class="destino-img"></div>
+                    <h4>Cancun, Mexico</h4>
+                    <p>Desde $450 USD</p>
+                </div>
+                <div class="destino-card">
+                    <div class="destino-img"></div>
+                    <h4>Punta Cana, Rep. Dominicana</h4>
+                    <p>Desde $520 USD</p>
+                </div>
+                <div class="destino-card">
+                    <div class="destino-img"></div>
+                    <h4>Cartagena, Colombia</h4>
+                    <p>Desde $380 USD</p>
+                </div>
+                <div class="destino-card">
+                    <div class="destino-img"></div>
+                    <h4>Lima, Peru</h4>
+                    <p>Desde $410 USD</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="buscador-hoteles">
+            <div class="search-container">
+                <h3>Busca Hoteles</h3>
+                <form id="hotel-form">
+                    <div class="form-group">
+                        <label for="hotel-destino">Destino:</label>
+                        <input type="text" id="hotel-destino" placeholder="Ciudad de destino" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hotel-checkin">Check-in:</label>
+                        <input type="date" id="hotel-checkin" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hotel-checkout">Check-out:</label>
+                        <input type="date" id="hotel-checkout" required>
+                    </div>
+                    <button type="submit" class="btn-buscar">Buscar Hoteles</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="hoteles-resultado">
+            <h3>Hoteles Disponibles</h3>
+            <div id="hotel-results"></div>
+        </section>
+
+        <section id="resultados" class="hidden">
+            <h3>Resultados de Busqueda de Vuelos</h3>
+            <div id="resultados-lista"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 ViajesApp - Todos los derechos reservados</p>
+            <div class="footer-links">
+                <a href="#">Politica de Privacidad</a>
+                <a href="#">Terminos y Condiciones</a>
+                <a href="#">Contacto</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/hotels.js"></script>
+</body>
+</html>
