@@ -1,0 +1,40 @@
+// js/presupuesto.js - Simulador de costos de viaje
+
+const costosBase = {
+    "vuelos": 500,
+    "hotel_noche": 80,
+    "comida_dia": 40,
+    "actividades_fijas": 150
+};
+
+/**
+ * Calcula el presupuesto estimado para un viaje.
+ * @param {number} dias - Cantidad de días de viaje.
+ * @param {string} categoriaHotel - 'estandar' (base) o 'lujo' (base * 2).
+ */
+function calcularPresupuestoTotal(dias, categoriaHotel = 'estandar') {
+    let costoHotel = costosBase.hotel_noche;
+    if (categoriaHotel === 'lujo') {
+        costoHotel *= 2; // El hotel de lujo cuesta el doble
+    }
+
+    const totalVuelos = costosBase.vuelos;
+    const totalAlojamiento = costoHotel * dias;
+    const totalComida = costosBase.comida_dia * dias;
+    const totalActividades = costosBase.actividades_fijas;
+
+    const totalEstimado = totalVuelos + totalAlojamiento + totalComida + totalActividades;
+
+    console.log(--- Presupuesto estimado para viaje de ${dias} días (${categoriaHotel}) ---);
+    console.log(Vuelos: $${totalVuelos});
+    console.log(Alojamiento (${dias} noches): $${totalAlojamiento});
+    console.log(Comida (${dias} días): $${totalComida});
+    console.log(Actividades y otros: $${totalActividades});
+    console.log(-------------------------------------------);
+    console.log(TOTAL ESTIMADO: $${totalEstimado});
+
+    return totalEstimado;
+}
+
+// Ejemplo de prueba: Viaje de 7 días, hotel estándar
+calcularPresupuestoTotal(7, 'estandar');
